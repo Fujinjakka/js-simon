@@ -3,11 +3,12 @@
 // Una volta inseriti i 5 numeri, il software dice quanti e quali numeri sono stati ricordati.
 
 
-// $(document).ready(
-  // function() {
+$(document).ready(
+  function() {
 
     var numeriDaIndovinare = [];
     var numeriInseriti = [];
+
 
     for (var i = 0; i < 5; i++) {
       var numeriRandom = randomNumber(1, 101);
@@ -15,20 +16,25 @@
     }
 
     alert(numeriDaIndovinare);
-    setTimeout(insertNumber(nunmeriInseriti), 3000);
+
+    setTimeout(insertNumber, 3000);
+
+    
 
 
 
-  // }
-// );
 
-function randomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min) ) + min;
-}
+    function randomNumber(min, max) {
+      return Math.floor(Math.random() * (max - min) ) + min;
+    }
 
-function insertNumber(arr) {
-  for (var i = 0; i < 5; i++) {
-    var numeriUtente = parseInt(prompt("inserisci i numeri che hai visto prima"));
-    arr.push(numeriUtente);
+    function insertNumber() {
+      var numeriInseriti = [];
+      for (var i = 0; i < 5; i++) {
+        var numeriUtente = parseInt(prompt("inserisci i numeri che hai visto prima"));
+        numeriInseriti.push(numeriUtente);
+      }
+    }
+
   }
-}
+);
